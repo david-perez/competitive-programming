@@ -30,6 +30,8 @@ typedef vector<ll> vll;
 typedef vector<vi> vvi;
 
 int main() {
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
 
     return 0;
 }
