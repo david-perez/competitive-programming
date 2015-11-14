@@ -2,5 +2,7 @@
 
 !.gitignore
 !*.cpp
+!*.pdf
 !UVa/
 !project-euler/
+!project-euler/overview/
