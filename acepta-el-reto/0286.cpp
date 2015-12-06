@@ -48,26 +48,13 @@ void intToDate(int jd, int &d, int &m, int &y) {
     y = 100*(n-49)+i+x;
 }
 
-void print(vector<ii> &v) {
+void print(vi &u) {
     int d, m, y;
-    for (int i = 0; i < v.size(); i++) {
-        ii p = v[i];
-        intToDate(p.first, d, m, y);
-        cout << d << "/" << m << "/" << y << " - ";
-        intToDate(p.second, d, m, y);
-        cout << d << "/" << m << "/" << y << endl;
+    for (int i = 0; i < u.size(); i++) {
+        intToDate(u[i], d, m, y);
+        printf("%d/%d/%d ", d, m, y);
     }
-}
-
-void print(multimap<int, ii > &mp) {
-    int d, m, y;
-    for (multimap<int, ii>::iterator it=mp.begin(); it!=mp.end(); ++it) {
-        ii p = (*it).second;
-        intToDate(p.first, d, m, y);
-        cout << d << "/" << m << "/" << y << " - ";
-        intToDate(p.second, d, m, y);
-        cout << d << "/" << m << "/" << y << endl;
-    }
+    cout << endl;
 }
 
 int main() {
@@ -77,62 +64,37 @@ int main() {
     
     cin >> viajes;
     while (viajes != 0) {
-        multimap<int, ii> u; // a |-> (a, b)
-        multimap<int, ii> v; // b |-> (a, b)
+        vi u, v;
         
         a = dateToInt(12, 6, 1968);
         while (viajes--) {
             scanf("%d/%d/%d", &d, &m, &y);
             b = dateToInt(d, m, y);
-            u.insert(pair<int, ii>(a, ii(a, b)));
-            v.insert(pair<int, ii>(b, ii(a, b)));
+            u.push_back(a);
+            v.push_back(b);
             
             scanf("%d/%d/%d", &d, &m, &y);
             a = dateToInt(d, m, y);
         }
         b = dateToInt(31, 12, 9999);
-        u.insert(pair<int, ii>(a, ii(a, b)));
-        v.insert(pair<int, ii>(b, ii(a, b)));
+        u.push_back(a);
+        v.push_back(b);
         
-        /*
-        cout << endl;
-        print(u);
-        cout << endl;
-        */
+        sort(u.begin(), u.end());
+        sort(v.begin(), v.end());
         
         cin >> consultas;
         while (consultas--) {
             scanf("%d/%d/%d", &d, &m, &y);
             c = dateToInt(d, m, y);
             
-            multimap<int, ii>::iterator it1 = u.upper_bound(c); // points to first element after c. O(logn)
-            multimap<int, ii>::iterator it2 = v.lower_bound(c); // points to c or goes after. O(logn)
+            //print(u);
+            //print(v);
             
-            vector<ii> v1;
-            for (multimap<int, ii >::iterator it = u.begin(); it != it1; ++it)
-                v1.push_back((*it).second);
-            sort(v1.begin(), v1.end());
+            vi::iterator upu = upper_bound(u.begin(), u.end(), c);
+            vi::iterator lowv = lower_bound(v.begin(), v.end(), c);
             
-            /*
-            cout << endl;
-            print(v1);
-            cout << endl;
-            */
-            
-            vector<ii> v2;
-            for (multimap<int, ii >::iterator it = it2; it != v.end(); ++it)
-                v2.push_back((*it).second);
-            sort(v2.begin(), v2.end());
-            
-            /*
-            cout << endl;
-            print(v2);
-            cout << endl;
-            */
-            
-            vector<ii> sol(50000);
-            vector<ii>::iterator it = set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), sol.begin());
-            cout << it-sol.begin() << endl; // it - sol.begin() is the number of elements in the intersection
+            cout << (upu - u.begin()) - (lowv - v.begin()) << endl;
         }
         
         cout << "----" << endl;
