@@ -59,6 +59,17 @@ void print(vector<ii> &v) {
     }
 }
 
+void print(multimap<int, ii > &mp) {
+    int d, m, y;
+    for (multimap<int, ii>::iterator it=mp.begin(); it!=mp.end(); ++it) {
+        ii p = (*it).second;
+        intToDate(p.first, d, m, y);
+        cout << d << "/" << m << "/" << y << " - ";
+        intToDate(p.second, d, m, y);
+        cout << d << "/" << m << "/" << y << endl;
+    }
+}
+
 int main() {
     int viajes, consultas;
     int d, m, y;
@@ -66,30 +77,62 @@ int main() {
     
     cin >> viajes;
     while (viajes != 0) {
-        vector<ii> v;
+        multimap<int, ii> u; // a |-> (a, b)
+        multimap<int, ii> v; // b |-> (a, b)
         
         a = dateToInt(12, 6, 1968);
         while (viajes--) {
             scanf("%d/%d/%d", &d, &m, &y);
             b = dateToInt(d, m, y);
-            v.push_back(ii(a, b));
+            u.insert(pair<int, ii>(a, ii(a, b)));
+            v.insert(pair<int, ii>(b, ii(a, b)));
             
             scanf("%d/%d/%d", &d, &m, &y);
             a = dateToInt(d, m, y);
         }
         b = dateToInt(31, 12, 9999);
-        v.push_back(ii(a, b));
+        u.insert(pair<int, ii>(a, ii(a, b)));
+        v.insert(pair<int, ii>(b, ii(a, b)));
+        
+        /*
+        cout << endl;
+        print(u);
+        cout << endl;
+        */
         
         cin >> consultas;
         while (consultas--) {
             scanf("%d/%d/%d", &d, &m, &y);
             c = dateToInt(d, m, y);
             
-            int intersect = 0;
-            for (int i = 0; i < v.size(); i++)
-                if (v[i].first <= c && c <= v[i].second) intersect++;
+            multimap<int, ii>::iterator it1 = u.upper_bound(c); // points to first element after c. O(logn)
+            multimap<int, ii>::iterator it2 = v.lower_bound(c); // points to c or goes after. O(logn)
             
-            cout << intersect << endl;
+            vector<ii> v1;
+            for (multimap<int, ii >::iterator it = u.begin(); it != it1; ++it)
+                v1.push_back((*it).second);
+            sort(v1.begin(), v1.end());
+            
+            /*
+            cout << endl;
+            print(v1);
+            cout << endl;
+            */
+            
+            vector<ii> v2;
+            for (multimap<int, ii >::iterator it = it2; it != v.end(); ++it)
+                v2.push_back((*it).second);
+            sort(v2.begin(), v2.end());
+            
+            /*
+            cout << endl;
+            print(v2);
+            cout << endl;
+            */
+            
+            vector<ii> sol(50000);
+            vector<ii>::iterator it = set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), sol.begin());
+            cout << it-sol.begin() << endl; // it - sol.begin() is the number of elements in the intersection
         }
         
         cout << "----" << endl;
