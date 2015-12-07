@@ -17,6 +17,7 @@
 #include <cstring> // memset
 #include <string>
 #include <functional> // greater, less...
+#include <bitset>
 
 using namespace std;
 
@@ -32,6 +33,6 @@ typedef vector<vi> vvi;
 int main() {
     //freopen("input.txt", "r", stdin);
     //freopen("output.txt", "w", stdout);
-
+    
     return 0;
 }
