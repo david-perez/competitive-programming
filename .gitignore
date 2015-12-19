@@ -3,6 +3,7 @@
 !.gitignore
 !*.cpp
 !*.pdf
+!*.txt
 !UVa/
 !project-euler/
 !project-euler/overview/
