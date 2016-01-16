@@ -33,14 +33,12 @@ typedef vector<ll> vll;
 typedef vector<vi> vvi;
 
 long f(long n) {
-    vi digits;
+    long sum = 0;
     while (n != 0) {
-        digits.push_back(n % 10);
+        sum += n % 10;
         n /= 10; 
     }
     
-    long sum = 0;
-    for (int i = 0; i < digits.size(); i++) sum += digits[i];
     return sum;
 }
 
