@@ -33,13 +33,8 @@ typedef vector<ll> vll;
 typedef vector<vi> vvi;
 
 long f(long n) {
-    long sum = 0;
-    while (n != 0) {
-        sum += n % 10;
-        n /= 10; 
-    }
-    
-    return sum;
+    long sum = n % 9;
+    return sum == 0? 9: sum;
 }
 
 int main() {
@@ -47,7 +42,7 @@ int main() {
     
     cin >> n;
     while (n != 0) {
-        while (n / 10 != 0) n = f(n);
+        n = f(n);
         cout << n << endl;
         
         cin >> n;
