@@ -32,26 +32,11 @@ typedef vector<dd> vdd;
 typedef vector<ll> vll;
 typedef vector<vi> vvi;
 
-long f(long n) {
-    long sum = 0;
-    while (n != 0) {
-        sum += n % 10;
-        n /= 10; 
-    }
-    
-    return sum;
-}
-
 int main() {
     long n;
     
-    cin >> n;
-    while (n != 0) {
-        while (n / 10 != 0) n = f(n);
-        cout << n << endl;
-        
-        cin >> n;
-    }
+    while (scanf("%ld", &n) && n != 0)
+	cout << (n % 9 == 0 ? 9 : n % 9) << endl;
     
     return 0;
 }
