@@ -41,10 +41,8 @@ int main() {
     while (n != 0) {
         int s = (n == 1 ? 0 : 1); // 1 is deficient because 1 is not a proper divisor of 1
         for (int i = 2; i < sqrt(n); i++) // O(sqrt(n))
-            if (n % i == 0) {
-                s += i;
-                s += n / i;
-            }
+            if (n % i == 0)
+                s += i + n / i;
         
         printf("%*d  ", 5, n);
         if (s == n) cout << "PERFECT" << endl;
