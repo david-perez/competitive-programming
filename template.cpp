@@ -34,7 +34,7 @@ typedef vector<double> vd;
 typedef vector<ll> vll;
 typedef vector<ii> vii;
 typedef vector<dd> vdd;
-typedef vector<pair<int, double>> vid;
+typedef vector<id> vid;
 typedef vector<l_l> vl_l;
 typedef vector<vi> vvi;
 typedef map<int, int> mii;
