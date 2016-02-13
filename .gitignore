@@ -2,6 +2,7 @@
 
 !.gitignore
 !*.cpp
+!*.java
 !*.pdf
 !*.txt
 !UVa/
