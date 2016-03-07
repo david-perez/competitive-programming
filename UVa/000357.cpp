@@ -39,9 +39,9 @@ typedef map<int, ll> mil;
 typedef map<ll, ll> mll;
 
 int coinValue[5] = {1, 5, 10, 25, 50};
-long long memo[5][30001]; // yes, the judge tests the case where n = 30000
+ll memo[5][30001]; // yes, the judge tests the case where n = 30000
 
-long long ways(int id, int value) {
+ll ways(int id, int value) {
     if (value == 0) return 1;
     if (id == 5 || value < 0) return 0;
     if (memo[id][value] != -1)
@@ -55,7 +55,7 @@ int main() {
 
     int n;
     while (cin >> n) {
-        long long m = ways(0, n);
+        ll m = ways(0, n);
         printf("There %s %lld %s to produce %d cents change.\n", m == 1 ? "is only" : "are", m, m == 1 ? "way" : "ways", n);
     }
 
