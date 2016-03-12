@@ -39,9 +39,9 @@ typedef map<int, ll> mil;
 typedef map<ll, ll> mll;
 
 int main() {
-    ll n;
+    unsigned int n;
     while (cin >> n && n != 0) {
-        ll sq = sqrt(n);
+        unsigned int sq = sqrt(n);
         cout << (sq*sq == n ? "yes" : "no") << endl;
     }
 
