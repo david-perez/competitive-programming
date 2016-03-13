@@ -39,8 +39,10 @@ typedef map<int, ll> mil;
 typedef map<ll, ll> mll;
 
 int main() {
-    //freopen("input.txt", "r", stdin);
-    //freopen("output.txt", "w", stdout);
-    
+    #ifndef ONLINE_JUDGE
+        freopen("input.in", "r", stdin);
+        //freopen("output.out", "w", stdout);
+    #endif
+
     return 0;
 }
