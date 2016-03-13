@@ -1,11 +1,5 @@
-*
-
-!.gitignore
-!*.cpp
-!*.java
-!*.pdf
-!*.txt
-!UVa/
-!project-euler/
-!project-euler/overview/
-!acepta-el-reto/
+.idea/
+*.iml
+*.zip
+CMakeLists.txt
+Makefile
