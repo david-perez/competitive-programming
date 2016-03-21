@@ -42,10 +42,10 @@ typedef map<ll, ll> mll;
 
 int main() {
     #ifdef ONLINE_JUDGE
-        //freopen("X-small-practice.in", "r", stdin);
-        //freopen("X-small-practice.out", "w", stdout);
-        freopen("X-large-practice.in", "r", stdin);
-        freopen("X-large-practice.out", "w", stdout);
+        freopen("X-small-practice.in", "r", stdin);
+        freopen("X-small-practice.out", "w", stdout);
+        //freopen("X-large-practice.in", "r", stdin);
+        //freopen("X-large-practice.out", "w", stdout);
     #endif
 
     return 0;
