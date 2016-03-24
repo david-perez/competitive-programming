@@ -25,28 +25,25 @@ typedef long long ll;
 typedef pair<int, int> ii;
 typedef pair<int, double> id;
 typedef pair<double, int> di;
-typedef pair<long, long> l_l;
 typedef pair<ll, ll> ll_ll;
 typedef pair<double, double> dd;
 typedef vector<int> vi;
-typedef vector<long> vl;
 typedef vector<double> vd;
 typedef vector<ll> vll;
 typedef vector<ii> vii;
 typedef vector<dd> vdd;
 typedef vector<id> vid;
-typedef vector<l_l> vl_l;
 typedef vector<vi> vvi;
 typedef map<int, int> mii;
-typedef map<int, long> mil;
-typedef map<long, long> mll;
+typedef map<int, ll> mil;
+typedef map<ll, ll> mll;
 
 int M = 78787;
 
 int main() {
-    ll m, N;
+    int m, N;
     while (cin >> m >> N) {
-        ll mul = 1, sum = 0, h;
+        ll mul = 1; int sum = 0, h;
         for (int i = 0; i < N/2; i++) {
             cin >> h;
             sum = (sum + (m*h*mul)%M) % M;
