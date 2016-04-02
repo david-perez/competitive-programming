@@ -22,6 +22,7 @@
 using namespace std;
 
 typedef long long ll;
+typedef unsigned long long ull;
 typedef pair<int, int> ii;
 typedef pair<int, double> id;
 typedef pair<double, int> di;
