@@ -8,6 +8,8 @@
 #include <map>
 #include <set>
 #include <stack>
+#include <list>
+#include <forward_list>
 #include <algorithm> // max...
 #include <utility> // pair
 #include <complex>
