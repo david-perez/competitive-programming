@@ -44,7 +44,7 @@ typedef map<ll, ll> mll;
 int main() {
     int n;
     while (cin >> n && n != 0) {
-        unsigned int a = 0, b = 0;
+        int a = 0, b = 0;
         while (n != 0) {
             a |= (n & (-n));
             n &= ~(n & (-n));
