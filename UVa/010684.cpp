@@ -32,8 +32,7 @@ typedef vector<vi> vvi;
 
 int main() {
     int N, max_so_far, max_to_here, b;
-    cin >> N;
-    while (N != 0) {
+    while (cin >> N && N != 0) {
         max_so_far = 0;
         max_to_here = 0;
         
@@ -46,8 +45,6 @@ int main() {
         
         if (max_so_far > 0) printf("The maximum winning streak is %d.\n", max_so_far);
         else printf("Losing streak.\n");
-        
-        cin >> N;
     }
     
     return 0;
