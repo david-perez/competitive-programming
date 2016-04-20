@@ -48,5 +48,10 @@ int main() {
         //freopen("X-large-practice.out", "w", stdout);
     #endif
 
+    #ifndef ONLINE_JUDGE
+        freopen("input.in", "r", stdin);
+        //freopen("output.out", "w", stdout);
+    #endif
+
     return 0;
 }
