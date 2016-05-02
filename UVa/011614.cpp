@@ -42,11 +42,11 @@ typedef map<int, long> mil;
 typedef map<long, long> mll;
 
 int main() {
-    int t; long long n, s;
-    cin >> t;
-    while (t--) {
-        cin >> n;
-        s = (sqrt(1+8*n)-1)/2;
+    int T;
+    cin >> T;
+    while (T--) {
+        ll n; cin >> n;
+        ll s = (sqrt(1+8*n)-1)/2;
         cout << s << endl;
     }
 
