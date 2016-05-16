@@ -6,8 +6,11 @@
 #include <vector>
 #include <queue>
 #include <map>
+#include <unordered_map>
 #include <set>
 #include <stack>
+#include <list>
+#include <forward_list>
 #include <algorithm> // max...
 #include <utility> // pair
 #include <complex>
@@ -22,6 +25,7 @@
 using namespace std;
 
 typedef long long ll;
+typedef unsigned long long ull;
 typedef pair<int, int> ii;
 typedef pair<int, double> id;
 typedef pair<double, int> di;
