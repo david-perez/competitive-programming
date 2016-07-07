@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <vector>
 #include <queue>
+#include <deque>
 #include <map>
 #include <unordered_map>
 #include <set>
