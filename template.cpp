@@ -43,6 +43,8 @@ typedef map<int, int> mii;
 typedef map<int, ll> mil;
 typedef map<ll, ll> mll;
 
+#define INF 1000000000 // 10^9
+
 int main() {
     #ifndef ONLINE_JUDGE
         freopen("input.in", "r", stdin);
