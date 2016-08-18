@@ -44,6 +44,7 @@ typedef map<int, ll> mil;
 typedef map<ll, ll> mll;
 
 #define INF 1000000000 // 10^9
+#define PI acos(-1)
 
 int main() {
     #ifndef ONLINE_JUDGE
