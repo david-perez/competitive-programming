@@ -5,7 +5,9 @@
 #include <cstdio>
 #include <vector>
 #include <queue>
+#include <deque>
 #include <map>
+#include <unordered_map>
 #include <set>
 #include <stack>
 #include <list>
@@ -41,20 +43,25 @@ typedef map<int, int> mii;
 typedef map<int, ll> mil;
 typedef map<ll, ll> mll;
 
+#define INF 1000000000 // 10^9
+#define PI acos(-1)
+#define EPS 1e-9
+
 int main() {
     int T;
     cin >> T; cin.get();
     while (T--) {
-        string s; getline(cin, s);
-        int os = 0, score = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s[i] == 'O') os++;
-            else {
-                score += os * (os + 1) / 2;
-                os = 0;
-            }
+        string s;
+        getline(cin, s);
+        int i = 0;
+        int score = 0;
+        for (char &c : s) {
+            if (c == 'O') {
+                i++;
+                score += i;
+            } else i = 0;
         }
-        score += os * (os + 1) / 2; // In case the string ended with O.
+
         cout << score << endl;
     }
 
