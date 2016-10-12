@@ -22,6 +22,7 @@
 #include <string>
 #include <functional> // greater, less...
 #include <bitset>
+#include <numeric>
 
 using namespace std;
 
