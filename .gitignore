@@ -2,4 +2,5 @@
 *.iml
 *.zip
 CMakeLists.txt
+cmake-build-debug
 Makefile
