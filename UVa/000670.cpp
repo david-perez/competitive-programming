@@ -47,8 +47,7 @@ int berge_mcbm() {
 int main() {
     int L;
     cin >> L;
-    for (int t = 0; t < L; t++) {
-        if (t != 0) cout << endl;
+    while (L--) {
         cin >> N >> M;
 
         vii bob;
@@ -90,6 +89,8 @@ int main() {
         }
         ii q = bob[N-1];
         printf("%d %d\n", q.first, q.second);
+
+        if (L > 0) cout << endl;
     }
 
     return 0;
