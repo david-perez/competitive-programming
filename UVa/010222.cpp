@@ -11,4 +11,6 @@ int main() {
         if (isspace(c)) cout << c;
         else cout << s[s.find(c) - 2];
     }
+
+    return 0;
 }
