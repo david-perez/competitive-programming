@@ -23,12 +23,9 @@ ll darea(vector<point> &p) {
 }
 
 int gcd(int a, int b) {
-    int x, y;
-    int xx = y = 0, yy = x = 1;
     while (b) {
-        int q = a/b, t = b; b = a%b; a = t;
-        t = xx; xx = x-q*xx; x = t;
-        t = yy; yy = y-q*yy; y = t;
+        int aux = b;
+        b = a%b; a = aux;
     }
     return a;
 }
