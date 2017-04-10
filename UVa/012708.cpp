@@ -10,7 +10,7 @@ int main() {
     while (T--) {
         ll N;
         cin >> N;
-        cout << (N % 2 == 0 ? N/2 : (N-1)/2) << endl;
+        cout << N/2 << endl;
     }
 
     return 0;
