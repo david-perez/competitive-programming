@@ -10,8 +10,8 @@ public class Main {
             BigInteger p = sc.nextBigInteger();
             sc.next();
             BigInteger q = sc.nextBigInteger();
-            BigInteger _gcd= p.gcd(q);
-            System.out.println(p.divide(_gcd).toString() + " / " + q.divide(_gcd).toString());
+            BigInteger g = p.gcd(q);
+            System.out.println(p.divide(g) + " / " + q.divide(g));
         }
     }
 }
